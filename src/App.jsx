@@ -1,12 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import Router from './common/navigation';
 
 const App = () => {
-  return (
-    <View>
-      <Text>masglo</Text>
-    </View>
-  );
+  return <Router />;
 };
 
 export default App;
