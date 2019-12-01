@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import * as userActions from '../../redux/actions/users';
 import * as routes from '../../common/navigation/routes';
+import * as strings from '../../common/strings';
 import CardItem from './component/CardItem';
 import { colors } from '../../common/styles';
 
@@ -21,13 +22,13 @@ const UserOverview = props => {
     fetchingUsers();
   }, []);
 
-  const goToUserDetails = () => {
+  const goToUserDetails = item => {
     const { navigation } = props;
-    navigation.navigate(routes.USER_DETAILS);
+    navigation.navigate(routes.USER_DETAILS, { ...item });
   };
 
   const renderItem = ({ item }) => {
-    return <CardItem onCardPress={goToUserDetails} style={styles.card} {...item} />;
+    return <CardItem onCardPress={() => goToUserDetails(item)} style={styles.card} {...item} />;
   };
 
   const keyExtractor = item => item.email;
@@ -57,6 +58,10 @@ const UserOverview = props => {
   }
 
   return <View style={styles.constainer}>{renderUsers()}</View>;
+};
+
+UserOverview.navigationOptions = {
+  headerTitle: <Text style={styles.headerTitle}>{strings.USEROVERVIEW_TITLE_TEXT}</Text>,
 };
 
 UserOverview.propTypes = {

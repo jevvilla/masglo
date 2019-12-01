@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { colors, sizes } from '../../common/styles';
+import { colors, sizes, hearderTitle } from '../../common/styles';
 
 export default StyleSheet.create({
   constainer: {
@@ -13,4 +13,7 @@ export default StyleSheet.create({
     marginVertical: sizes.base,
   },
   flatlist: { paddingHorizontal: 16 },
+  headerTitle: {
+    ...hearderTitle,
+  },
 });
