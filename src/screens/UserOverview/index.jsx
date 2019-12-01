@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -45,6 +46,7 @@ const UserOverview = props => {
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         showsVerticalScrollIndicator={false}
+        ListFooterComponent={<SafeAreaView forceInset={{ bottom: 'always' }} />}
       />
     );
   };
