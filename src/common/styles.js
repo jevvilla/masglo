@@ -26,3 +26,17 @@ export const shadow = () => {
     elevation: 2,
   };
 };
+
+export const defaultHeader = {
+  borderBottomWidth: 0,
+  elevation: 0,
+  height: 64,
+  backgroundColor: colors.background,
+};
+
+export const hearderTitle = {
+  color: colors.violet,
+  fontWeight: 'bold',
+  fontSize: 22,
+  opacity: 0.8,
+};
