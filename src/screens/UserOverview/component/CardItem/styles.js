@@ -9,11 +9,13 @@ export default StyleSheet.create({
     paddingVertical: sizes.base,
     paddingHorizontal: sizes.base * 1.5,
     flexDirection: 'row',
+    justifyContent: 'space-between',
     width: '80%',
     ...shadow(),
   },
   infoContainer: {
     alignItems: 'flex-start',
+    maxWidth: 170,
   },
   thumbnail: {
     width: 75,
@@ -29,5 +31,11 @@ export default StyleSheet.create({
     color: colors.gray,
     fontSize: 15,
     paddingTop: sizes.base / 3,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  icon: {
+    justifyContent: 'center',
   },
 });

@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, Image, ViewPropTypes, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
+
+import { colors } from '../../../../common/styles';
 
 import styles from './styles';
 
@@ -15,10 +18,15 @@ const CardItem = props => {
 
   return (
     <TouchableOpacity style={[styles.container, cstyles]} activeOpacity={0.7} onPress={onCardPress}>
-      <Image source={{ uri: picture.large }} style={styles.thumbnail} />
-      <View style={styles.infoContainer}>
-        <Text style={styles.name}>{`${first} ${last}`}</Text>
-        <Text style={styles.email}>{`${state}, ${country}`}</Text>
+      <View style={styles.row}>
+        <Image source={{ uri: picture.large }} style={styles.thumbnail} />
+        <View style={styles.infoContainer}>
+          <Text style={styles.name}>{`${first} ${last}`}</Text>
+          <Text numberOfLines={2} style={styles.email}>{`${state}, ${country}`}</Text>
+        </View>
+      </View>
+      <View style={styles.icon}>
+        <Icon size={20} name="chevron-right" color={colors.gray} />
       </View>
     </TouchableOpacity>
   );
