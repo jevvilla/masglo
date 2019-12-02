@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import * as types from '../actions/types';
 
 const INITIAL_STATE = {
@@ -16,6 +17,22 @@ const userReducer = (state = INITIAL_STATE, action) => {
 
     case types.FETCHING_USERS_SUCCESS:
       return { ...state, isFetching: false, users: action.payload };
+
+    case types.CHANGE_USER_PICTURE:
+      const users = state.users.map(item => {
+        if (item.email === action.payload.email) {
+          return {
+            ...item,
+            picture: {
+              large: action.payload.uri,
+            },
+          };
+        }
+
+        return item;
+      });
+
+      return { ...state, users };
 
     default:
       return state;

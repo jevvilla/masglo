@@ -15,6 +15,11 @@ export const fetchingUsersFailure = err => ({
   payload: err,
 });
 
+export const changeUserPicture = user => ({
+  type: types.CHANGE_USER_PICTURE,
+  payload: user,
+});
+
 export const fetchingUsers = () => {
   return async dispatch => {
     dispatch(fetchingUsersRequest());
