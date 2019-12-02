@@ -1,7 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import { UserDetails, UserOverview } from '../../screens';
+import { UserDetails, UserOverview, Camera } from '../../screens';
 import { defaultHeader } from '../styles';
 
 import * as routes from './routes';
@@ -13,6 +13,10 @@ const Navigator = createStackNavigator(
     },
     [routes.USER_DETAILS]: {
       screen: UserDetails,
+    },
+    [routes.CAMERA]: {
+      screen: Camera,
+      navigationOptions: { header: null, gesturesEnabled: false },
     },
   },
   {
