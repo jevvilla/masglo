@@ -77,7 +77,7 @@ class Camera extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar hidden />
+        <StatusBar backgroundColor={colors.deepBlack} barStyle="light-content" />
         <RNCamera
           ref={this.setCameraRef}
           style={styles.camera}
