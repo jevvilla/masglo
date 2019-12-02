@@ -1,4 +1,5 @@
 import UserDetails from './UserDetails';
 import UserOverview from './UserOverview';
+import Camera from './Camera';
 
-export { UserDetails, UserOverview };
+export { Camera, UserDetails, UserOverview };
