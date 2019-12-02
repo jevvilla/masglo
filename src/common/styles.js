@@ -8,10 +8,13 @@ export const sizes = {
 
 export const colors = {
   violet: 'rgb(88, 61, 233)',
+  red: 'rgb(255,100,100)',
+  green: 'rgb(150, 255, 150)',
   black: '#323643',
   white: '#FFFFFF',
   background: 'rgb(249, 249, 254)',
   gray: '#C5CCD6',
+  transparent: '#00000000',
 };
 
 export const shadow = () => {
